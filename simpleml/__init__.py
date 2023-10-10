@@ -1,2 +1,2 @@
 __version__ = '0.0.1'
-__all__ = ['NeuralNet', 'Regression']
+__all__ = ['NeuralNet', 'Regression', 'utilities']
