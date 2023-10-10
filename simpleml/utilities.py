@@ -2,7 +2,7 @@ import numpy as np
 def mean_squared_error(y, y_pred):
     return np.sum(np.square(y - y_pred))/np.size(y,0)
 def r2(y, y_pred):
-    return 1 - np.sum(np.square(y-y_pred))/np.sum(np.square(y - np.average(y_pred, 0)), 0)
+    return np.squeeze(1 - np.sum(np.square(y-y_pred))/np.sum(np.square(y - np.average(y_pred, 0)), 0))
 def accuracy(y, y_pred):
     if y.ndim != y_pred.ndim:
         raise Exception('Dimensions must match for both arguments.')
@@ -13,7 +13,7 @@ def accuracy(y, y_pred):
     TP = 0
     for col in range(cols):
         TP += np.sum(y[:,col]==y_pred[:, col])
-    return TP/rows
+    return TP/(rows*cols)
 def error_rate(y, y_pred):
     return 1-accuracy(y, y_pred)
 def precision(y, y_pred, kind='MICRO'):
