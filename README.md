@@ -6,7 +6,7 @@ simpleml is a lightweight machine learning library I created from scratch using 
 2. Logistic Regression
 3. Linear Regression
 
-In addition there following utilities are provided
+In addition the following utilities are provided
 1. 13 metrics for evaluation
 2. A Z score standardization Scaler
 3. A split function for splitting training and testing data
